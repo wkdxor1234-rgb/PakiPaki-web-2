@@ -136,3 +136,7 @@ def predict():
 
     except Exception as e:
         return jsonify(ok=False, error="Server error", detail=str(e)), 500
+
+@app.get("/")
+def root():
+    return jsonify(ok=True, message="PakiPaki API is running. See /health (GET) and /predict (POST).")
